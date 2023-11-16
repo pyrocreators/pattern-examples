@@ -1,39 +1,39 @@
 interface UniversityState {
-    operate(): void;
+  operate(): void;
 }
 
 class OpenState implements UniversityState {
-    public operate(): void {
-        console.log('University is open. Classes are in session.');
-    }
+  public operate(): void {
+    console.log("University is open. Classes are in session.");
+  }
 }
 
 class ClosedState implements UniversityState {
-    public operate(): void {
-        console.log('University is closed. No classes are in session.');
-    }
+  public operate(): void {
+    console.log("University is closed. No classes are in session.");
+  }
 }
 
 class VacationState implements UniversityState {
-    public operate(): void {
-        console.log('University is on vacation. No classes are scheduled.');
-    }
+  public operate(): void {
+    console.log("University is on vacation. No classes are scheduled.");
+  }
 }
 
 class University {
-    private state: UniversityState;
+  private state: UniversityState;
 
-    constructor(state: UniversityState) {
-        this.state = state;
-    }
+  constructor(state: UniversityState) {
+    this.state = state;
+  }
 
-    public setUniversityState(state: UniversityState): void {
-        this.state = state;
-    }
+  public setUniversityState(state: UniversityState): void {
+    this.state = state;
+  }
 
-    public printUniversityState(): void {
-        this.state.operate();
-    }
+  public printUniversityState(): void {
+    this.state.operate();
+  }
 }
 
 const openState = new OpenState();
@@ -50,4 +50,3 @@ const closedState = new ClosedState();
 university.setUniversityState(closedState);
 
 university.printUniversityState();
-
